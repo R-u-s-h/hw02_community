@@ -4,6 +4,7 @@ from .models import Group, Post
 
 POSTS_LIMIT_ON_PAGE = 10
 
+
 def index(request):
     posts = Post.objects.order_by('-pub_date')[:POSTS_LIMIT_ON_PAGE]
     template = 'posts/index.html'
