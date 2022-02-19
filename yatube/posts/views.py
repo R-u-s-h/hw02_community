@@ -2,11 +2,11 @@ from django.shortcuts import get_object_or_404, render
 
 from .models import Group, Post
 
-LIMIT_POSTS = 10
+LIMIT_POST = 10
 
 
 def index(request):
-    posts = Post.objects.order_by('-pub_date')[:LIMIT_POSTS]
+    posts = Post.objects.order_by('-pub_date')[:LIMIT_POST]
     template = 'posts/index.html'
     context = {
         'posts': posts,
@@ -17,10 +17,11 @@ def index(request):
 def group_posts(request, slug):
     template = 'posts/group_list.html'
     group = get_object_or_404(Group, slug=slug)
-    posts = Post.objects.filter(group=group).order_by('-pub_date')[:LIMIT_POSTS]
+    posts = Post.objects.filter(group=group).order_by('-pub_date')[:LIMIT_POST]
     context = {
         'group': group,
         'posts': posts,
     }
-    return render(request,template,context)
+    return render(request, template, context)
+
     
