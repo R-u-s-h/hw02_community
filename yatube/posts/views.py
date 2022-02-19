@@ -1,7 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404, render
 
-from .models import Post, Group
-
+from .models import Group, Post
 
 POSTS_LIMIT_ON_PAGE = 10
 
