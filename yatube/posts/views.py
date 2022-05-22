@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.core.paginator import Paginator
 from .models import Group, Post
 
+
 LIMIT_POST = 10
 
 
